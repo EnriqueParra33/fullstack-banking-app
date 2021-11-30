@@ -31,8 +31,8 @@ if (process.env.NODE_ENV === "production") {
         dal
           .create(req.params.name, req.params.email, req.params.password)
           .then((user) => {
-            console.log(JSON.stringify(user));
-            res.send(JSON.stringify(user));
+            console.log(user);
+            res.send(user);
           });
       }
     });
@@ -57,8 +57,8 @@ if (process.env.NODE_ENV === "production") {
   // find user account
   app.get("/account/find/:email", function (req, res) {
     dal.find(req.params.email).then((user) => {
-      console.log(user.text());
-      res.send(user.text());
+      console.log(user);
+      res.send(user);
     });
   });
   
