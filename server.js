@@ -31,8 +31,8 @@ if (process.env.NODE_ENV === "production") {
         dal
           .create(req.params.name, req.params.email, req.params.password)
           .then((user) => {
-            console.log(user);
-            res.send(user);
+            console.log(JSON.stringify(user));
+            res.send(JSON.stringify(user));
           });
       }
     });
