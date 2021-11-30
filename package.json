@@ -1,0 +1,27 @@
+{
+  "name": "fullstack-banking-app",
+  "version": "1.0.0",
+  "description": "banking app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EnriqueParra33/fullstack-banking-app.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EnriqueParra33/fullstack-banking-app/issues"
+  },
+  "homepage": "https://github.com/EnriqueParra33/fullstack-banking-app#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongodb": "^4.2.0"
+  }
+}
