@@ -68,7 +68,7 @@ function updateWithdraw(email, amount) {
       .collection('users')
       .findOneAndUpdate(
         { email: email },
-        { $dec: { balance: amount } },
+        { $inc: { balance: -amount } },
         { returnOriginal: false },
         function (err, documents) {
           err ? reject(err) : resolve(documents);
