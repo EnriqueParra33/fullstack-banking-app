@@ -2,13 +2,15 @@ import Card from './Card';
 
 function Home() {
   return (
-    <Card
-      txtcolor="black"
-      header="Bad Bank Landing Page"
-      title="Welcome to the bank"
-      text="You can move around using the navigation bar."
-      body={<img src="bank.png" className="img-fluid" alt="Illustration of a bank" />}
-    />
+    <div className="content">
+      <Card
+        txtcolor="black"
+        header="EPM International Bank"
+        title="World's Most Baddest Bank"
+        text="This is the most insecure place to store your money and information, feel free to provide us and everyone else your personal data."
+        body={<img src="bank.png" className="img-fluid" alt="Illustration of a bank" />}
+      />
+    </div>
   );
 }
 
