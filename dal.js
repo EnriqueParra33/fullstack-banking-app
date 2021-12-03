@@ -69,7 +69,7 @@ function withdraw(email, amount) {
       .collection('users')
       .findOneAndUpdate(
         { email: email },
-        { $inc: { balance: amount } },
+        { $inc: { balance: -amount } },
         { returnOriginal: false },
         function (err, documents) {
           err ? reject(err) : resolve(documents);
@@ -90,4 +90,4 @@ function all() {
   });
 }
 
-module.exports = { create, findOne, find, update, all };
+module.exports = { create, findOne, find, update, all, withdraw };
