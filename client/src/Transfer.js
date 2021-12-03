@@ -79,7 +79,7 @@ function Transfer() {
           />
           <br />
           <button type="submit" className="btn btn-light" onClick={handle}>
-            Withdraw
+            Transfer
           </button>
         </>
       );

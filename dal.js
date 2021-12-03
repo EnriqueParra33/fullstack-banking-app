@@ -85,16 +85,6 @@ function transfer(email, emailToTransfer, amount) {
     const customers = db
       .collection('users')
       .findOneAndUpdate(
-        { email: email },
-        { $inc: { balance: -amount } },
-        { returnOriginal: false },
-        function (err, documents) {
-          err ? reject(err) : resolve(documents);
-        }
-      );
-    const anothercustomer = db
-      .collection('users')
-      .findOneAndUpdate(
         { email: emailToTransfer },
         { $inc: { balance: amount } },
         { returnOriginal: false },
