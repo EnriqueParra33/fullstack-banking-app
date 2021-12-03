@@ -63,12 +63,13 @@ function update(email, amount) {
 }
 
 function updateWithdraw(email, amount) {
+  console.log("Updatewithdraw");
   return new Promise((resolve, reject) => {
     const customers = db
       .collection('users')
       .findOneAndUpdate(
         { email: email },
-        { $inc: { balance: -amount } },
+        { $inc: { balance: Number(amount)*(-1) } },
         { returnOriginal: false },
         function (err, documents) {
           err ? reject(err) : resolve(documents);
