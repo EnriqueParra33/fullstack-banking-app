@@ -50,7 +50,7 @@ function WithdrawForm(props) {
       props.setStatus('Invalid amount');
       return;
     }
-    fetch(`/account/update/${userContext.loggedIn.email}/${amount}`)
+    fetch(`/account/updatewithdraw/${userContext.loggedIn.email}/${amount}`)
       .then((response) => response.text())
       .then((text) => {
         try {

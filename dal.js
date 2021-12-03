@@ -62,6 +62,21 @@ function update(email, amount) {
   });
 }
 
+function updateWithdraw(email, amount) {
+  return new Promise((resolve, reject) => {
+    const customers = db
+      .collection('users')
+      .findOneAndUpdate(
+        { email: email },
+        { $dec: { balance: amount } },
+        { returnOriginal: false },
+        function (err, documents) {
+          err ? reject(err) : resolve(documents);
+        }
+      );
+  });
+}
+
 // all users
 function all() {
   return new Promise((resolve, reject) => {
