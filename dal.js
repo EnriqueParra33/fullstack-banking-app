@@ -63,7 +63,6 @@ function update(email, amount) {
 }
 
 function withdraw(email, amount) {
-  console.log("withdraw please");
   return new Promise((resolve, reject) => {
     const customers = db
       .collection('users')
@@ -80,7 +79,6 @@ function withdraw(email, amount) {
 
 //transfer
 function transfer(email, emailToTransfer, amount) {
-  console.log(`Account: ${email}. To-Transfer: ${emailToTransfer}. Amount: ${amount}}`)
   return new Promise((resolve, reject) => {
     const customers = db
       .collection('users')
@@ -107,4 +105,4 @@ function all() {
   });
 }
 
-module.exports = { create, findOne, find, update, all, withdraw };
+module.exports = { create, findOne, find, update, all, withdraw, transfer};
