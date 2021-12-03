@@ -62,8 +62,8 @@ function update(email, amount) {
   });
 }
 
-function updateWithdraw(email, amount) {
-  console.log("Updatewithdraw");
+function withdraw(email, amount) {
+  console.log("withdraw please");
   return new Promise((resolve, reject) => {
     const customers = db
       .collection('users')
