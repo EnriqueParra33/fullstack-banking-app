@@ -7,6 +7,7 @@ function Deposit() {
   const [status, setStatus] = useState('');
 
   return (
+    <div className="content">
     <Card
       bgcolor="warning"
       header="Deposit"
@@ -19,6 +20,7 @@ function Deposit() {
         )
       }
     />
+    </div>
   );
 }
 

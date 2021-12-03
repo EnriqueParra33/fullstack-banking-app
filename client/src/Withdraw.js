@@ -7,6 +7,7 @@ function Withdraw() {
   const [status, setStatus] = useState('');
 
   return (
+    <div className="content">
     <Card
       bgcolor="danger"
       header="Withdraw"
@@ -19,6 +20,7 @@ function Withdraw() {
         )
       }
     />
+    </div>
   );
 }
 

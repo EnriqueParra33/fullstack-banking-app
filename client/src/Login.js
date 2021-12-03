@@ -8,18 +8,20 @@ function Login() {
   const userContext = useContext(UserContext);
 
   return (
-    <Card
-      bgcolor="secondary"
-      header="Login"
-      status={status}
-      body={
-        userContext.loggedIn.name === null ? (
-          <LoginForm setShow={setShow} setStatus={setStatus} />
-        ) : (
-          <LoginMsg setShow={setShow} setStatus={setStatus} />
-        )
-      }
-    />
+    <div className="content">
+      <Card
+        bgcolor="secondary"
+        header="Login"
+        status={status}
+        body={
+          userContext.loggedIn.name === null ? (
+            <LoginForm setShow={setShow} setStatus={setStatus} />
+          ) : (
+            <LoginMsg setShow={setShow} setStatus={setStatus} />
+          )
+        }
+      />
+    </div>
   );
 }
 
@@ -38,7 +40,7 @@ function LoginMsg(props) {
   return (
     <>
       <h5>Success</h5>
-      <button type="submit" className="btn btn-light" onClick={handle}>
+      <button type="submit" className="btn btn-light btn-primary" onClick={handle}>
         Authenticate again
       </button>
     </>
@@ -101,7 +103,7 @@ function LoginForm(props) {
         onChange={(e) => setPassword(e.currentTarget.value)}
       />
       <br />
-      <button type="submit" className="btn btn-light" onClick={handle}>
+      <button type="submit" className="btn btn-light btn-primary" onClick={handle}>
         Login
       </button>
     </>

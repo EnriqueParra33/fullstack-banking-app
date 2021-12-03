@@ -6,12 +6,14 @@ function CreateAccount() {
   const [status, setStatus] = useState('');
 
   return (
+    <div className="content">
     <Card
-      bgcolor="primary"
+      bgcolor="secondary"
       header="Create Account"
       status={status}
       body={show ? <CreateForm setShow={setShow} setStatus={setStatus} /> : <CreateMsg setShow={setShow} />}
     />
+    </div>
   );
 }
 
