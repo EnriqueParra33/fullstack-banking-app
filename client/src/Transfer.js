@@ -39,7 +39,7 @@ function Transfer() {
           .then((text) => {
             try {
               const data = JSON.parse(text);
-              props.setStatus(`Withdraw of $${amount}`);
+              props.setStatus(`Transfer of $${amount}`);
               props.setShow(false);
               console.log('JSON:', data);
               setLoggedIn({
@@ -49,7 +49,7 @@ function Transfer() {
                 balance: userContext.loggedIn.balance - parseInt(amount),
               });
             } catch (err) {
-              props.setStatus('Withdraw failed');
+              props.setStatus('Transfer failed');
               console.log('err:', text);
             }
           });
