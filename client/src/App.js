@@ -9,6 +9,7 @@ import CreateAccount from './CreateAccount';
 import Login from './Login';
 import Deposit from './Deposit';
 import Withdraw from './Withdraw';
+import Transfer from './Transfer';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState({
@@ -28,6 +29,7 @@ function App() {
           <Route path="/login" component={Login} />
           <Route path="/deposit" component={Deposit} />
           <Route path="/withdraw" component={Withdraw} />
+          <Route path="/transfer" component={Transfer}/>
         </HashRouter>
       </UserContext.Provider>
     </>

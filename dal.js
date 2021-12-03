@@ -78,6 +78,33 @@ function withdraw(email, amount) {
   });
 }
 
+//transfer
+function transfer(email, emailToTransfer, amount) {
+  console.log(`Account: ${email}. To-Transfer: ${emailToTransfer}. Amount: ${amount}}`)
+  return new Promise((resolve, reject) => {
+    const customers = db
+      .collection('users')
+      .findOneAndUpdate(
+        { email: email },
+        { $inc: { balance: -amount } },
+        { returnOriginal: false },
+        function (err, documents) {
+          err ? reject(err) : resolve(documents);
+        }
+      );
+    const anothercustomer = db
+      .collection('users')
+      .findOneAndUpdate(
+        { email: emailToTransfer },
+        { $inc: { balance: amount } },
+        { returnOriginal: false },
+        function (err, documents) {
+          err ? reject(err) : resolve(documents);
+        }
+      );
+  });
+}
+
 // all users
 function all() {
   return new Promise((resolve, reject) => {

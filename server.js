@@ -98,6 +98,17 @@ app.get('/account/all', function (req, res) {
   });
 });
 
+app.get('/account/transfer/:email/:emailToTransfer/:amount', function (req, res) {
+  var amount = Number(req.params.amount);
+  var email = req.params.email;
+  var emailToTransfer = req.params.emailToTransfer;
+  dal.transfer(email, emailToTransfer, amount).then((response) => {
+    console.log(response);
+    res.send(response);
+  });
+
+});
+
 var port = process.env.PORT || 5000;
 app.listen(port);
 console.log('Running on port: ' + port);

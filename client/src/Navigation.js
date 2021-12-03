@@ -15,6 +15,7 @@ function Navigation() {
           <Nav.Link href="#login">Login</Nav.Link>
           <Nav.Link href="#deposit">Deposit</Nav.Link>
           <Nav.Link href="#withdraw">Withdraw</Nav.Link>
+          <Nav.Link href="#transfer">Transfer</Nav.Link>
         </Nav>
         <Nav.Item>
           <Nav.Link>{userContext.loggedIn.name}</Nav.Link>
